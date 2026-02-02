@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <section class="rps-container">
+      <div>
+        <h2 class="rps-heading">Rock Paper Scissors</h2>
+      </div>
+      <div>
+        <button
+          type="button"
+          title="Select Rock"
+          name="choice"
+          value="0"
+          onclick="result(this.value)"
+          class="move-button"
+        >
+          <div>
+            <img src="images/rock-emoji.png" alt="" class="move-icon" />
+          </div>
+        </button>
+        <button
+          type="button"
+          name="choice"
+          value="1"
+          onclick="result(this.value)"
+          class="move-button"
+        >
+          <img src="images/paper-emoji.png" alt="Paper" class="move-icon" />
+        </button>
+        <button
+          type="button"
+          name="choice"
+          value="2"
+          onclick="result(this.value)"
+          class="move-button"
+        >
+          <img
+            src="images/scissors-emoji.png"
+            alt="Scissors"
+            class="move-icon"
+          />
+        </button>
+      </div>
+
+      <div class="score-stats">
+        <p class="js-result result"></p>
+        <p class="js-move">
+          You: <span class="player-choice"></span>
+          <span class="computer-choice"></span> :Computer
+        </p>
+        <div class="js-score">
+          Wins: <span id="wins"></span> Losses:<span id="losses"></span> Ties:
+          <span id="ties"></span>
+        </div>
+        <div>
+          <p>
+            <button type="button" onclick="reset()" class="reset-score-button">
+              Reset
+            </button>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
