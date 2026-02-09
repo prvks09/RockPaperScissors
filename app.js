@@ -6,6 +6,9 @@
         { name: "Scissors", img: "images/scissors-emoji.png" }
       ];
 
+      let isAutoPlaying = false;
+      let intervalId;
+
   
 
       let score = JSON.parse(localStorage.getItem("score")) ?? {
@@ -47,6 +50,8 @@
       }
 
       function reset() {
+
+        console.log("reset called");
         score.losses = 0;
         score.wins = 0;
         score.ties = 0;
@@ -80,4 +85,38 @@
         const move = moves[choice];
         document.querySelector(selector).innerHTML =
         `<img src="${move.img}" alt="${move.name}" class="move-icon" />`;
+      }
+
+      function autoPlay() {
+
+       let autoPlayElement = document.querySelector(".auto-play-button");
+        
+
+        if(isAutoPlaying) {
+
+          clearInterval(intervalId);
+          isAutoPlaying = false;
+          autoPlayElement.classList.remove("active");
+
+
+        } else {
+
+          console.log("inside auto loop");
+          reset();
+         
+
+          intervalId = setInterval(
+                      function () {
+                        let playersChoice = Math.floor(Math.random() * 3);
+                      result(playersChoice);
+                      }
+                      ,
+                      1000
+                      );
+          isAutoPlaying = true;
+          autoPlayElement.classList.add("active");
+          
+        }
+
+ 
       }

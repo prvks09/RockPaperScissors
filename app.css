@@ -14,6 +14,7 @@ html {
 body {
   height: 100%; /* inherits from html */
   width: 100%; /* inherits from html */
+  background-color: rgb(25, 25, 25);
 }
 
 .subscribe-btn {
@@ -54,7 +55,6 @@ body {
   justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  background-color: rgb(25, 25, 25);
 
   font-size: 2rem;
   color: white;
@@ -94,16 +94,19 @@ body {
   margin-top: 1rem;
 } */
 
-.reset-score-button {
+.reset-score-button,
+.auto-play-button {
   border: none;
-  background-color: white;
+  display: inline-block;
+  background-color: whitesmoke;
   color: black;
   font-size: 1rem;
   border-radius: 16px;
   font-weight: bold;
   padding: 8px 16px;
-
   cursor: pointer;
+  width: auto;
+  max-width: max-content; /* corrected */
 }
 
 .player-choice,
@@ -124,4 +127,25 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
+}
+
+.auto-play-button {
+  transition: transform 1s ease-in-out;
+}
+
+@keyframes scaleLoop {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.auto-play-button.active {
+  background-color: red;
+  animation: scaleLoop 1s infinite ease-in-out;
 }
