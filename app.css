@@ -12,9 +12,33 @@ html {
 }
 
 body {
+  height: 90%; /* inherits from html */
+  width: 90%; /* inherits from html */
+  background-color: rgb(25, 25, 25);
+}
+
+.rps-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+
+  font-size: 2rem;
+  color: white;
+
   height: 100%; /* inherits from html */
   width: 100%; /* inherits from html */
-  background-color: rgb(25, 25, 25);
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.rps-heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.slection-images {
+  display: flex;
 }
 
 .subscribe-btn {
@@ -50,26 +74,6 @@ body {
   padding: 4px 8px;
 }
 
-.rps-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: column;
-
-  font-size: 2rem;
-  color: white;
-
-  height: 100%; /* inherits from html */
-  width: 100%; /* inherits from html */
-  gap: 2rem;
-  padding: 2rem;
-}
-
-.rps-heading {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
 .move-button {
   background-color: transparent;
   padding: 1rem;
@@ -77,13 +81,20 @@ body {
   border-radius: 50%;
   border: 2px solid white;
   cursor: pointer;
-  width: 120px;
-  height: 120px;
+  /* width: 120px;
+  height: 120px; */
+  width: clamp(80px, 10vw, 120px);
+  height: clamp(80px, 10vw, 120px);
+
+  /* width: 12vw;
+  height: 12vw; */
+
   margin-right: 10px;
 }
 
 .move-icon {
   height: 50px;
+  /* height: 6vw; */
   /* border-radius: 50%;
   border: 10px rgb(25, 25, 25);
   background-color: rgb(25, 25, 25); */

@@ -106,9 +106,9 @@
          
 
           intervalId = setInterval(
-                      function () {
+                      () => {
                         let playersChoice = Math.floor(Math.random() * 3);
-                      result(playersChoice);
+                        result(playersChoice);
                       }
                       ,
                       1000
