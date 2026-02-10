@@ -18,8 +18,25 @@
       };
       updateScoreElement();
 
+      let moveButtons =  document.querySelectorAll('.move-button');
+
+      moveButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          result(parseInt(btn.value))
+
+        })          
+      });
+      
+      // addEventListener('click', () => {
+      //   result(moveButton.value);
+
+      //   }
+      
+      // );
+
    
       function result(playersChoice) {
+
 
         const computerChoice = Math.floor(Math.random() * 3);
         let result = "";
@@ -52,6 +69,10 @@
       function reset() {
 
         console.log("reset called");
+        let autoPlayElement = document.querySelector(".auto-play-button");
+        if(autoPlayElement.classList.contains('active')) {
+          autoPlay();
+        }
         score.losses = 0;
         score.wins = 0;
         score.ties = 0;
