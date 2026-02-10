@@ -130,9 +130,12 @@ body {
 }
 
 .result {
-  display: inline-block;
+  /* display: inline-block; */
   width: 2rem; /* or whatever fits your layout */
   height: 2rem;
+
+  /* text-align: center; */
+  margin: 0px auto;
 }
 
 .score-stats {
@@ -172,4 +175,10 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
+}
+
+.js-move {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
 }
