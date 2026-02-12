@@ -115,11 +115,13 @@ function updateScoreElement() {
 
       
 
-      function renderMove(choice, selector) {
-        const move = moves[choice];
-        document.querySelector(selector).innerHTML =
-        `<img src="${move.img}" alt="${move.name}" class="move-icon" />`;
-      }
+function renderMove(choice, selector) {
+  const move = moves[choice];
+  document.querySelector(selector).innerHTML =
+  `<img src="${move.img}" alt="${move.name}" class="move-icon" />`;
+}
+
+document.querySelector('.auto-play-button').addEventListener('click', () => autoPlay());
 
 function autoPlay() {
 
@@ -154,3 +156,5 @@ function autoPlay() {
 
 
 }
+
+
