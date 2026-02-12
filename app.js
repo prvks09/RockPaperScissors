@@ -133,6 +133,7 @@ function autoPlay() {
     clearInterval(intervalId);
     isAutoPlaying = false;
     autoPlayElement.classList.remove("active");
+    autoPlayElement.innerText = "Auto Play";
 
 
   } else {
@@ -151,6 +152,7 @@ function autoPlay() {
                 );
     isAutoPlaying = true;
     autoPlayElement.classList.add("active");
+    autoPlayElement.innerText = "Stop - Auto Play";
     
   }
 

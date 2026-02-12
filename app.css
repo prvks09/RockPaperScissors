@@ -172,6 +172,10 @@ body {
   animation: scaleLoop 1s infinite ease-in-out;
 }
 
+/* .auto-play-button.active::after {
+  content: " (Running..)";
+} */
+
 .selection-images {
   display: flex;
   flex-wrap: wrap;
