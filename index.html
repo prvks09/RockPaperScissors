@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock Paper Scissors</title>
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="app_latest.css" />
   </head>
   <body>
     <section class="rps-container">
@@ -58,10 +58,14 @@
           <div>Losses: <span id="losses"></span></div>
           <div>Ties: <span id="ties"></span></div>
         </div>
+        <div class="confirmation">
+          <p>Are you sure you want to reset the score?</p>
+          <button class="confirm-yes">Yes</button>
+          <button class="confirm-no">No</button>
+        </div>
+
         <div>
-          <button type="button" onclick="reset()" class="reset-score-button">
-            Reset
-          </button>
+          <button type="button" class="reset-score-button">Reset</button>
           <button type="button" class="auto-play-button">Auto Play</button>
         </div>
       </div>

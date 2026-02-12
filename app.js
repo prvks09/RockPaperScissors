@@ -159,4 +159,64 @@ function autoPlay() {
 
 }
 
+document.querySelector('.reset-score-button').addEventListener('click', () => reset());
+
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Backspace' && event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
+    // reset();
+    displayConfirmationBox() 
+  }
+});
+
+document.addEventListener('keydown', (event) => {
+  if ((event.key === 'a' || event.key === 'A') && event.target.tagName !== 'INPUT' && event.target.tagName !== 'TEXTAREA') {
+    autoPlay();
+    
+  }
+});
+
+const resetButton = document.querySelector('.reset-score-button');
+const confirmationBox = document.querySelector('.confirmation');
+const yesButton = document.querySelector('.confirm-yes');
+const noButton = document.querySelector('.confirm-no');
+
+yesButton.addEventListener('click', () => {
+
+});
+
+function displayConfirmationBox() {
+  console.log('display box');
+  confirmationBox.classList.add("active");
+  document.body.classList.add("popup-active"); // Add this
+}
+
+function hideConfirmationBox() {
+  confirmationBox.classList.remove("active");
+  document.body.classList.remove("popup-active"); // Add this
+}
+
+yesButton.addEventListener('click', () => {
+  reset();
+  hideConfirmationBox();
+
+});
+
+noButton.addEventListener('click', () => {
+    hideConfirmationBox();
+
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    hideConfirmationBox();
+  }
+});
+
+// Close when clicking outside the popup
+// confirmationBox.addEventListener('click', (event) => {
+//   if (event.target === confirmationBox) {
+//     hideConfirmationBox();
+//   }
+// });
 

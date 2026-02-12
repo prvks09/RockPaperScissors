@@ -107,8 +107,10 @@ body {
   margin-top: 1rem;
 } */
 
-.reset-score-button,
-.auto-play-button {
+/* .reset-score-button,
+.auto-play-button { */
+
+button {
   border: none;
   display: inline-block;
   background-color: whitesmoke;
@@ -186,4 +188,63 @@ body {
   display: flex;
   justify-content: space-evenly;
   flex-direction: row;
+}
+
+.confirmation {
+  display: none;
+}
+
+.confirmation.active {
+  display: block;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+
+  /* Sizing & spacing */
+  width: fit-content;
+  max-width: 90%;
+  padding: 2rem;
+
+  /* Visual styling */
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+
+  /* Animation */
+  animation: fadeInScale 0.3s ease-out;
+}
+
+@keyframes fadeInScale {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.confirmation.active::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+
+/* Disable all body interactions when popup is active */
+body.popup-active {
+  overflow: hidden; /* Prevents scrolling */
+  pointer-events: none; /* Disables all clicks */
+}
+
+/* Re-enable interactions only for the popup */
+body.popup-active .confirmation.active {
+  pointer-events: auto;
 }
